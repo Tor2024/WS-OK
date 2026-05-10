@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Terminal | System Initialization</title>
+    <meta name="description" content="High-tech web studio operating at the edge of digital reality.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/shaders/CopyShader.js"></script>
+    
+    <link rel="stylesheet" href="style.css"></head>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i data-lucide="terminal"></i>
+                <span>STUDIO.OS v1.0.4</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Main</a></li>
+                <li><a href="vault.html" class="nav-link">Vault</a></li>
+                <li><a href="signal.html" class="nav-link">Signal</a></li>
+                <li><a href="core.html" class="nav-link">Core</a></li>
+                <li><a href="uplink.html" class="nav-link">Uplink</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span id="admin-trigger" class="label-md" style="font-size: 10px; color: var(--primary);" data-tooltip="Click 5x to Override">Secure Connection [OK]</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero / Home -->
+        <section id="home" class="hero section-padding">
+
+            <canvas id="hero-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="label-md">System::Initialize<span id="init-dots">...</span></span>
+                    <h1 class="glitch-title" data-tooltip="Studio.OS v1.0.4" style="font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: 1.1; margin: 20px 0;">HUMAN CORE.<br>NEURAL EDGE.<br>DIGITAL BREATHE.</h1>
+                    <p class="body-md" data-i18n="hero-desc" style="color: var(--text-dim); max-width: 500px;">Проектируем интерфейсы, которые чувствуют пользователя. Дизайн, усиленный интеллектом машин. Развернуто в Германии — доступно по всей сети.</p>
+                    <div class="hero-btns" style="margin-top: 40px; display: flex; gap: 20px;">
+                        <a href="#portfolio" class="btn-t">Initialize Vault</a>
+                        <a href="uplink.html" class="btn-t active">Uplink Signal</a>
+                    </div>
+                </div>
+                <div class="hero-status">
+                        <div class="system-status-box t-border telemetry-console">
+                        <div class="telemetry-topline">
+                            <span class="label-md" style="font-size: 10px; color: var(--primary);">PROD::TELEMETRY</span>
+                            <span class="label-md" style="font-size: 10px; opacity: 0.7;" id="telemetry-mode">MODE: VERIFIED</span>
+                        </div>
+                        <div class="status-line"><span>Environment:</span><span>Production</span></div>
+                        <div class="status-line">
+                            <span>Status:</span>
+                            <span id="telemetry-status" class="telemetry-chip" style="color: var(--primary); transition: color 0.3s;">Optimized</span>
+                        </div>
+                        <div class="status-line">
+                            <span>Uptime:</span>
+                            <span id="telemetry-uptime">99.9981%</span>
+                        </div>
+                        <div class="status-line">
+                            <span>Deployments:</span>
+                            <span id="telemetry-deployments" style="white-space: nowrap;"></span>
+                        </div>
+                        <div class="status-line">
+                            <span>Latency:</span>
+                            <span id="telemetry-ping">24ms</span>
+                        </div>
+
+                        <div class="telemetry-microgrid" aria-hidden="true">
+                            <span class="tp tp1"></span><span class="tp tp2"></span><span class="tp tp3"></span><span class="tp tp4"></span>
+                            <span class="tp tp5"></span><span class="tp tp6"></span><span class="tp tp7"></span><span class="tp tp8"></span>
+                        </div>
+
+                        <div class="telemetry-bars" id="telemetry-bars" style="margin-top: 12px;">
+                            <div class="tbar" data-bar="latency"></div>
+                            <div class="tbar" data-bar="uptime"></div>
+                        </div>
+
+                        <div style="margin-top: 18px; height: 110px; background: var(--bg-deep); border: 1px solid var(--primary-border); position: relative; overflow: hidden;">
+                            <canvas id="neural-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                            <div id="neural-event-overlay" style="position: absolute; top: 8px; left: 8px; font-size: 9px; color: var(--primary); opacity: 0; transition: opacity 0.3s; text-shadow: 0 0 5px var(--primary);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section-padding">
+            <div class="container">
+                <div class="section-title" style="margin-top: 60px;">
+                    <h2 class="display-sm">Project <span style="color: var(--primary);">Vault</span></h2>
+                </div>
+                <div id="portfolio-grid" class="content-grid">
+                    <!-- Premium Card 1 -->
+                    <article class="t-card t-border">
+                            <div class="card-img-wrapper">
+                             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="NEURAL_CORE">
+                             <div class="scanline"></div>
+                         </div>
+                        <div class="card-body">
+                            <div class="card-meta"><span>NODE_ID: 001</span><span>// SYSTEM_CORE</span></div>
+                            <h3 class="card-title">NEURAL_CORE v2.1</h3>
+                            <p class="card-excerpt" data-i18n="proj-1-desc" style="color: var(--text-dim); font-size: 13px;">Умная экосистема для управления ИИ-агентами. Реализована мгновенная синхронизация и нейронный интерфейс.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">REACT / OPENAI</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Premium Card 2 -->
+                    <article class="t-card t-border">
+                            <div class="card-img-wrapper">
+                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="QUANTUM_DASHBOARD">
+                             <div class="scanline"></div>
+                         </div>
+                        <div class="card-body">
+                            <div class="card-meta"><span>NODE_ID: 002</span><span>// VISUAL_HUB</span></div>
+                            <h3 class="card-title">QUANTUM_DASHBOARD</h3>
+                            <p class="card-excerpt" data-i18n="proj-2-desc" style="color: var(--text-dim); font-size: 13px;">Аналитический хаб на WebGL. 60 FPS при отрисовке миллиона объектов. Визуализация квантовых состояний.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">THREE.JS / WEBGL</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Premium Card 3 -->
+                    <article class="t-card t-border">
+                            <div class="card-img-wrapper">
+                             <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="CYBER_VAULT">
+                             <div class="scanline"></div>
+                         </div>
+                        <div class="card-body">
+                            <div class="card-meta"><span>NODE_ID: 003</span><span>// SECURITY_VAULT</span></div>
+                            <h3 class="card-title">CYBER_VAULT_SEC</h3>
+                            <p class="card-excerpt" data-i18n="proj-3-desc" style="color: var(--text-dim); font-size: 13px;">Защищенное хранилище конфиденциальных данных с кастомным шифрованием и биометрическим интерфейсом.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">RUST / ASTRO</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-footer" style="margin-top: 40px; text-align: center;">
+                <a href="vault.html" class="nav-link flicker-link" style="font-size: 14px;">>> ACCESS_FULL_ARCHIVE</a>
+                </div>
+
+                <div class="section-title" style="margin-top: 80px;">
+                    <h2 class="display-sm">Live <span style="color: var(--primary);">Signal</span></h2>
+                </div>
+                <div id="news-grid" class="content-grid">
+                    <!-- News Item 1 -->
+                    <article class="t-card t-border" style="padding: 25px;">
+                        <div class="card-meta"><span>SIGNAL_ID: SIG-882</span><span style="color: var(--primary);">[ UPDATE ]</span></div>
+                        <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">SYSTEM_UPGRADE_COMPLETE</h3>
+                        <p data-i18n="news-1-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Успешно развернуто обновление ядра STUDIO.OS v1.2. Внедрена поддержка RU/EN/DE.</p>
+                        <div class="card-meta">08.05.2026 // ADDR_0x4F2</div>
+                    </article>
+
+                    <!-- News Item 2 -->
+                    <article class="t-card t-border" style="padding: 25px;">
+                        <div class="card-meta"><span>SIGNAL_ID: SIG-741</span><span style="color: var(--primary);">[ COLLAB ]</span></div>
+                        <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">NEW_CLIENT_ACQUISITION</h3>
+                        <p data-i18n="news-2-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Начата разработка архитектуры для ведущего европейского ИИ-стартапа.</p>
+                        <div class="card-meta">01.05.2026 // ADDR_0x9A1</div>
+                    </article>
+
+                    <!-- News Item 3 -->
+                    <article class="t-card t-border" style="padding: 25px;">
+                        <div class="card-meta"><span>SIGNAL_ID: SIG-332</span><span style="color: var(--primary);">[ SECURITY ]</span></div>
+                        <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">CYBER_SECURITY_REPORT</h3>
+                        <p data-i18n="news-3-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Ежемесячный аудит подтвердил 100% устойчивость наших фронтенд-решений.</p>
+                        <div class="card-meta">25.04.2026 // ADDR_0x2B8</div>
+                    </article>
+                </div>
+                <div class="section-footer" style="margin-top: 40px; text-align: center;">
+                <a href="signal.html" class="nav-link flicker-link" style="font-size: 14px;">>> ACCESS_FULL_SIGNAL</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container about-grid">
+                <div class="about-info">
+                    <span class="label-md">Identity::System_Architect</span>
+                    <h2 class="display-sm" style="margin-bottom: 24px;">HUMAN LOGIC.<br><span style="color: var(--primary);">MACHINE PRECISION.</span></h2>
+                    <p class="body-md" data-i18n="hero-subtitle" style="margin-bottom: 32px; color: var(--text-dim);">Дизайнер с руками инженера и нейросетью вместо ассистента. Я не создаю страницы. Я компилирую цифровые экосистемы, которые работают, пока мир спит.</p>
+                    
+                    <div class="status-list" style="margin-bottom: 40px;">
+                        <div class="status-line"><span>STATUS:</span><span style="color: var(--primary);">DEPLOYED IN GERMANY 🇩🇪</span></div>
+                        <div class="status-line"><span>UPTIME:</span><span>8+ YEARS OF DEVELOPMENT</span></div>
+                    </div>
+
+                    <a href="core.html" class="btn-t" data-tooltip="Read full logs">Access Full Profile</a>
+                </div>
+                <div class="about-visual">
+                    <div class="t-border" style="padding: 40px; background: var(--bg-surface);">
+                        <div class="card-meta" style="margin-bottom: 20px;">CORE_STACK: ACTIVE</div>
+                        <div class="tech-stack" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div class="tech-item" style="font-size: 10px;">Execution::Next.js</div>
+                            <div class="tech-item" style="font-size: 10px;">Logic::TypeScript</div>
+                            <div class="tech-item" style="font-size: 10px;">Design::Figma</div>
+                            <div class="tech-item" style="font-size: 10px;">Neural::AI_Augmented</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="launch" class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--primary-dim);">
+            <div class="container" style="text-align: center; padding: 60px 0;">
+                <span class="label-md" style="color: var(--primary);">FINAL_OVERRIDE: 0-SURPRISE</span>
+                <h2 class="display-sm" data-i18n="cta-title" style="margin: 20px 0;">СИСТЕМА ГОТОВА К ЗАПУСКУ</h2>
+                <p class="body-md" data-i18n="cta-desc" style="margin-bottom: 40px; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto;">Твои идеи заслуживают реализации в стабильном коде. Пока алгоритмы окончательно не захватили мир — давай создадим что-то настоящее.</p>
+                
+                <a href="uplink.html" class="btn-t active" data-i18n="cta-btn" style="font-size: 18px; padding: 20px 60px; justify-content: center; box-shadow: 0 0 30px var(--primary-border);">
+                    [ ИНИЦИИРОВАТЬ СВЯЗЬ ]
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--primary-border); padding-top: 40px;">
+            <div class="footer-left">
+                <span style="color: var(--primary);">© 2026 WEB STUDIO OLEH KALCHENKO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin panel injected via main.js -->
+    <div id="admin-panel"></div>
+
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

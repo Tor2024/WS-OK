@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATENSCHUTZ | STUDIO.OS</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="telemetry-theme">
+    <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i data-lucide="terminal"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;">STUDIO.OS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Main</a></li>
+                <li><a href="vault.html" class="nav-link">Vault</a></li>
+                <li><a href="signal.html" class="nav-link">Signal</a></li>
+                <li><a href="core.html" class="nav-link">Core</a></li>
+                <li><a href="uplink.html" class="nav-link">Uplink</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span id="admin-trigger" class="label-md" style="font-size: 10px; color: var(--primary);" data-tooltip="Click 5x to Override">Secure Connection [OK]</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="legal-content t-border" style="padding: 40px; background: var(--bg-surface);">
+                <span class="label-md" style="color: var(--primary);">LEGAL_NODE: DATENSCHUTZ</span>
+                <h1 class="display-sm" style="margin: 20px 0;">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
+                
+                <h2>1. ОБЩИЕ ПОЛОЖЕНИЯ</h2>
+                <p>Защита ваших персональных данных является для меня приоритетом. Мы обрабатываем данные в соответствии с GDPR (DSGVO).</p>
+
+                <h2>2. СБОР ДАННЫХ</h2>
+                <p>Мы собираем только те данные, которые необходимы для работы терминала и обратной связи. Ваши данные не передаются третьим лицам без вашего явного согласия.</p>
+
+                <h2>3. КУКИ (COOKIES)</h2>
+                <p>Наш терминал использует технические куки для сохранения ваших настроек и обеспечения безопасности сессии. Вы можете управлять ими через настройки вашего браузера.</p>
+
+                <h2>4. ВАШИ ПРАВА</h2>
+                <p>Вы имеете право на получение информации о ваших сохраненных данных, а также право на их исправление, блокировку или удаление.</p>
+
+                <div style="margin-top: 60px; border-top: 1px solid var(--primary-dim); padding-top: 20px;">
+                    <span class="label-md" style="font-size: 10px;">ENCRYPTION_STATUS: AES-256_ACTIVE</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--primary-border); padding-top: 40px;">
+            <div class="footer-left">
+                <span style="color: var(--primary);">© 2026 WEB STUDIO OLEH KALCHENKO</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

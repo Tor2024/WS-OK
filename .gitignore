@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Videos and large media
+*.mp4
+*.mov
+*.avi
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.avif
+*.gif
+
+# Fonts
+*.woff
+*.woff2
+*.ttf
+
+# Node modules
+node_modules/
+
+# Env files
+.env
+.env.local

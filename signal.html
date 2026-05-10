@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNAL | Live Feed</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i data-lucide="terminal"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;">STUDIO.OS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Main</a></li>
+                <li><a href="vault.html" class="nav-link">Vault</a></li>
+                <li><a href="signal.html" class="nav-link active">Signal</a></li>
+                <li><a href="core.html" class="nav-link">Core</a></li>
+                <li><a href="uplink.html" class="nav-link">Uplink</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span id="admin-trigger" class="label-md" style="font-size: 10px; color: var(--primary);" data-tooltip="Click 5x to Override">Secure Connection [OK]</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="display-sm">Live <span style="color: var(--primary);">Signal</span></h2>
+            </div>
+            <div id="news-grid" class="content-grid">
+                <!-- News Item 1 -->
+                <article class="t-card t-border" style="padding: 25px;">
+                    <div class="card-meta"><span>SIGNAL_ID: SIG-882</span><span style="color: var(--primary);">[ UPDATE ]</span></div>
+                    <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">SYSTEM_UPGRADE_COMPLETE</h3>
+                    <p data-i18n="news-1-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Успешно развернуто обновление ядра STUDIO.OS v1.2. Внедрена поддержка RU/EN/DE.</p>
+                    <div class="card-meta">08.05.2026 // ADDR_0x4F2</div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="t-card t-border" style="padding: 25px;">
+                    <div class="card-meta"><span>SIGNAL_ID: SIG-741</span><span style="color: var(--primary);">[ COLLAB ]</span></div>
+                    <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">NEW_CLIENT_ACQUISITION</h3>
+                    <p data-i18n="news-2-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Начата разработка архитектуры для ведущего европейского ИИ-стартапа.</p>
+                    <div class="card-meta">01.05.2026 // ADDR_0x9A1</div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="t-card t-border" style="padding: 25px;">
+                    <div class="card-meta"><span>SIGNAL_ID: SIG-332</span><span style="color: var(--primary);">[ SECURITY ]</span></div>
+                    <h3 class="card-title" style="font-size: 1.2rem; margin: 15px 0;">CYBER_SECURITY_REPORT</h3>
+                    <p data-i18n="news-3-desc" style="color: var(--text-dim); font-size: 13px; margin-bottom: 15px;">Ежемесячный аудит подтвердил 100% устойчивость наших фронтенд-решений.</p>
+                    <div class="card-meta">25.04.2026 // ADDR_0x2B8</div>
+                </article>            </div>
+        </div>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--primary-border); padding-top: 40px;">
+            <div class="footer-left">
+                <span style="color: var(--primary);">© 2026 WEB STUDIO OLEH KALCHENKO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Admin Panel -->
+    <div id="admin-panel" class="admin-overlay"></div>
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

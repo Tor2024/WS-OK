@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPLINK | Secure Transmission Channel</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="telemetry-theme">
+    <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i data-lucide="terminal"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;">STUDIO.OS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Main</a></li>
+                <li><a href="vault.html" class="nav-link">Vault</a></li>
+                <li><a href="signal.html" class="nav-link">Signal</a></li>
+                <li><a href="core.html" class="nav-link">Core</a></li>
+                <li><a href="uplink.html" class="nav-link active">Uplink</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span id="admin-trigger" class="label-md" style="font-size: 10px; color: var(--primary);" data-tooltip="Click 5x to Override">Secure Connection [OK]</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="uplink-layout">
+                
+                <!-- Left Side: Identity & Manifest -->
+                <div class="identity-side">
+                    <span class="label-md status-label">CHANNEL_ESTABLISHED // SRC-VERIFIED</span>
+                    <h1 class="glitch-title uplink-title periodic-glitch">UPLINK</h1>
+                    
+                    <!-- Manifest Terminal Unified -->
+                    <div class="contact-terminal t-border manifest-box">
+                        <div class="terminal-header">
+                            <div class="header-status">
+                                <span class="status-dot active blink-primary"></span>
+                                <span class="blink-text" data-i18n="new-message">НОВОЕ СООБЩЕНИЕ</span>
+                            </div>
+                            <span class="header-meta">MANIFEST_DECODING</span>
+                        </div>
+                        <div id="manifest-terminal" class="terminal-body manifest-body">
+                            <div id="manifest-content">
+                                <span class="cursor-line">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Uplink Form -->
+                <div class="form-side">
+                    <div class="contact-terminal t-border">
+                        <div class="terminal-header">
+                            <div class="header-status">
+                                <span class="status-dot active"></span>
+                                <span>PACKET_TRANSMISSION</span>
+                            </div>
+                            <span class="header-meta">READY_TO_SEND</span>
+                        </div>
+                        <div class="terminal-body form-body">
+                            <form id="contact-form" novalidate>
+                                <div class="input-group">
+                                    <label class="card-meta">SOURCE_ID:</label>
+                                    <input type="text" class="t-input" id="name-input" data-i18n-placeholder="form-placeholder-name" placeholder="User Name" required>
+                                    <div class="t-error-msg" id="name-error"></div>
+                                </div>
+                                <div class="input-group">
+                                    <label class="card-meta">REPLY_PATH:</label>
+                                    <input type="email" class="t-input" id="email-input" data-i18n-placeholder="form-placeholder-email" placeholder="Email Address" required>
+                                    <div class="t-error-msg" id="email-error"></div>
+                                </div>
+                                <div class="input-group">
+                                    <label class="card-meta">PAYLOAD_DATA:</label>
+                                    <textarea class="t-input" id="msg-input" data-i18n-placeholder="form-placeholder-msg" rows="4" placeholder="Message content..." required></textarea>
+                                    <div class="t-error-msg" id="msg-error"></div>
+                                </div>
+                                <button type="submit" class="btn-t active submit-btn" style="display: flex; gap: 10px; align-items: center; justify-content: center;">
+                                    <i data-lucide="send"></i>
+                                    <span data-i18n="form-btn">Confirm Transmission</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info Below Form -->
+                    <div class="t-border info-footer">
+                        <div class="footer-block">
+                            <span class="card-meta">ENCRYPTION_KEY:</span>
+                            <div class="footer-subtext">RSA-4096-PSS_MODE_ALPHA_STABLE</div>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#" class="nav-link">TG_LINK</a>
+                            <a href="#" class="nav-link">GH_SYNC</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span style="color: var(--primary);">© 2026 WEB STUDIO OLEH KALCHENKO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Admin Panel Container -->
+    <div id="admin-panel"></div>
+
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

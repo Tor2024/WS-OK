@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAULT | Project Archives</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i data-lucide="terminal"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;">STUDIO.OS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Main</a></li>
+                <li><a href="vault.html" class="nav-link active">Vault</a></li>
+                <li><a href="signal.html" class="nav-link">Signal</a></li>
+                <li><a href="core.html" class="nav-link">Core</a></li>
+                <li><a href="uplink.html" class="nav-link">Uplink</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span id="admin-trigger" class="label-md" style="font-size: 10px; color: var(--primary);" data-tooltip="Click 5x to Override">Secure Connection [OK]</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="display-sm">Project <span style="color: var(--primary);">Vault</span></h2>
+            </div>
+            <div id="portfolio-grid" class="content-grid">
+                <!-- Premium Card 1 -->
+                <article class="t-card t-border">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="NEURAL_CORE">
+                        <div class="scanline"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span>NODE_ID: 001</span><span>// SYSTEM_CORE</span></div>
+                            <h3 class="card-title">NEURAL_CORE v2.1</h3>
+                            <p class="card-excerpt" data-i18n="proj-1-desc" style="color: var(--text-dim); font-size: 13px;">Умная экосистема для управления ИИ-агентами. Реализована мгновенная синхронизация и нейронный интерфейс.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">REACT / OPENAI</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Premium Card 2 -->
+                    <article class="t-card t-border">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="QUANTUM_DASHBOARD">
+                            <div class="scanline"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta"><span>NODE_ID: 002</span><span>// VISUAL_HUB</span></div>
+                            <h3 class="card-title">QUANTUM_DASHBOARD</h3>
+                            <p class="card-excerpt" data-i18n="proj-2-desc" style="color: var(--text-dim); font-size: 13px;">Аналитический хаб на WebGL. 60 FPS при отрисовке миллиона объектов. Визуализация квантовых состояний.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">THREE.JS / WEBGL</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Premium Card 3 -->
+                    <article class="t-card t-border">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="CYBER_VAULT">
+                            <div class="scanline"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta"><span>NODE_ID: 003</span><span>// SECURITY_VAULT</span></div>
+                            <h3 class="card-title">CYBER_VAULT_SEC</h3>
+                            <p class="card-excerpt" data-i18n="proj-3-desc" style="color: var(--text-dim); font-size: 13px;">Защищенное хранилище конфиденциальных данных с кастомным шифрованием и биометрическим интерфейсом.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                <span class="label-md" style="font-size: 9px; opacity: 0.6;">RUST / ASTRO</span>
+                                <a href="vault.html" class="btn-t" style="font-size: 10px;">Access_Project</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+        </div>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--primary-border); padding-top: 40px;">
+            <div class="footer-left">
+                <span style="color: var(--primary);">© 2026 WEB STUDIO OLEH KALCHENKO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Admin Panel -->
+    <div id="admin-panel" class="admin-overlay"></div>
+    <div id="edit-modal" class="admin-overlay" style="z-index: 3000; padding: 100px;"></div>
+
+    <script src="translations.js"></script>
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
