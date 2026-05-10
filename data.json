@@ -4,7 +4,7 @@
       "id": "p1",
       "title": "NEURAL_CORE v2.1",
       "description": "Полноценная цифровая экосистема для управления распределенными ИИ-агентами. Реализована мгновенная синхронизация данных и нейронный интерфейс управления.",
-      "image": "assets/photo-1639762681485-074b7f938ba0.avif",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
       "tags": "NEXT.JS / NEURAL / SUPABASE",
       "link": "#"
     },
@@ -12,7 +12,7 @@
       "id": "p2",
       "title": "QUANTUM_DASHBOARD",
       "description": "Аналитический хаб для визуализации сложных вычислений в реальном времени. Использование Three.js позволило добиться 60 FPS при отрисовке миллиона объектов.",
-      "image": "assets/plate.png",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
       "tags": "REACT / THREE.JS / WEBGL",
       "link": "#"
     },
@@ -20,7 +20,7 @@
       "id": "p3",
       "title": "CYBER_VAULT_SECURITY",
       "description": "Защищенное хранилище конфиденциальных данных с многофакторной аутентификацией и кастомным шифрованием на стороне клиента.",
-      "image": "assets/Без%20имени.png",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
       "tags": "ASTRO / SECURITY / RUST",
       "link": "#"
     },
@@ -28,7 +28,7 @@
       "id": "p4",
       "title": "AI_CHATBOT_PLATFORM",
       "description": "Интеллектуальная платформа для создания чат-ботов с интеграцией GPT и кастомными моделями машинного обучения.",
-      "image": "assets/plate.png",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
       "tags": "PYTHON / TENSORFLOW / REACT",
       "link": "#"
     },
@@ -36,7 +36,7 @@
       "id": "p5",
       "title": "BLOCKCHAIN_WALLET",
       "description": "Безопасный кошелек для криптовалют с поддержкой множественных блокчейнов и биометрической аутентификацией.",
-      "image": "assets/planet.png",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
       "tags": "SOLIDITY / WEB3 / SWIFT",
       "link": "#"
     },
@@ -44,7 +44,7 @@
       "id": "p6",
       "title": "VR_EDUCATION_APP",
       "description": "Образовательное приложение в виртуальной реальности для иммерсивного обучения с интерактивными 3D-моделями.",
-      "image": "assets/photo-1677442136019-21780ecad995.avif",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
       "tags": "UNITY / C# / VR",
       "link": "#"
     }

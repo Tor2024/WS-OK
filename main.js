@@ -320,7 +320,7 @@ function renderPortfolio(limit = null) {
     grid.innerHTML = items.map((item, index) => `
         <article class="t-card t-border">
             <div class="card-img-wrapper">
-                <img src="${item.image || 'assets/hero.png'}" alt="${item.title}">
+                <img src="${item.image || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80'}" alt="${item.title}">
                 <div class="scanline"></div>
             </div>
             <div class="card-body">
